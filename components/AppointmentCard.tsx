@@ -1,5 +1,5 @@
+import { Calendar, Clock, Edit2 } from "lucide-react";
 import React, { useState } from "react";
-import { Calendar, Clock, Edit2, X } from "lucide-react";
 import { Appointment } from "@/types/appwrite.types";
 
 interface AppointmentCardProps {
