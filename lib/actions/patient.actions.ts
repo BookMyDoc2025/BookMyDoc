@@ -63,7 +63,10 @@ export const getUserByEmailAndPhone = async (email: string, phone: string) => {
 
     return existingUsers.total > 0 ? existingUsers.users[0] : null;
   } catch (error) {
-    console.error("An error occurred while checking for an existing user:", error);
+    console.error(
+      "An error occurred while checking for an existing user:",
+      error
+    );
     return null;
   }
 };

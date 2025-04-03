@@ -20,21 +20,21 @@ const RequestSuccess = async ({
   return (
     <div className=" flex h-screen max-h-screen px-[5%]">
       <div className="success-img">
-      <div className=" flex flex-row items-center gap-3 py-1 my-1 text-2xl font-medium ">
-            <Image
-              src="/assets/icons/BookMyDoc_Icon.png"
-              height={20}
-              width={60}
-              alt="patient"
-              className=" cursor-pointer"
-              style={{ objectPosition: "center 40%" }}
-            />
-            <div className=" py-4 my-4 text-2xl font-semibold cursor-pointer">
-              <Link href="/">
-                Book <span className=" text-blue-500">MyDoc</span>
-              </Link>
-            </div>
+        <div className=" flex flex-row items-center gap-3 py-1 my-1 text-2xl font-medium ">
+          <Image
+            src="/assets/icons/BookMyDoc_Icon.png"
+            height={20}
+            width={60}
+            alt="patient"
+            className=" cursor-pointer"
+            style={{ objectPosition: "center 40%" }}
+          />
+          <div className=" py-4 my-4 text-2xl font-semibold cursor-pointer">
+            <Link href="/">
+              Book <span className=" text-blue-500">MyDoc</span>
+            </Link>
           </div>
+        </div>
 
         <section className="flex flex-col items-center">
           <Image
