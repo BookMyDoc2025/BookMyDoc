@@ -5,7 +5,6 @@ import { Appointment } from "@/types/appwrite.types";
 import { AppointmentCard } from "@/components/AppointmentCard";
 import {
   getAppointmentList,
-  updateAppointment,
   updateUserAppointment,
 } from "@/lib/actions/appointment.actions";
 import { useParams } from "next/navigation";
@@ -21,7 +20,7 @@ const UserDashboard = () => {
     const fetchAppointments = async () => {
       // Simulating an API call
       const fetchedAppointments = await getAppointmentList(
-        params.userId as string
+        params.userId as string,
       );
       console.log(fetchedAppointments[0].$id);
       setAppointments(fetchedAppointments);
@@ -44,8 +43,8 @@ const UserDashboard = () => {
       if (updatedData) {
         setAppointments(
           appointments.map((apt) =>
-            apt.appointmentId === updatedData.id ? updatedData : apt
-          )
+            apt.appointmentId === updatedData.id ? updatedData : apt,
+          ),
         );
       }
     } catch (error) {

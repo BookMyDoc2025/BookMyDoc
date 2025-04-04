@@ -15,7 +15,7 @@ import { formatDateTime, parseStringify } from "../utils";
 
 //  CREATE APPOINTMENT
 export const createAppointment = async (
-  appointment: CreateAppointmentParams
+  appointment: CreateAppointmentParams,
 ) => {
   try {
     if (!DATABASE_ID || !APPOINTMENT_COLLECTION_ID) {
@@ -30,7 +30,7 @@ export const createAppointment = async (
       DATABASE_ID!,
       APPOINTMENT_COLLECTION_ID!,
       ID.unique(),
-      appointment
+      appointment,
     );
     if (!newAppointment) {
       throw new Error("Failed to create an appointment document.");
@@ -49,7 +49,7 @@ export const getRecentAppointmentList = async () => {
     const appointments = await databases.listDocuments(
       DATABASE_ID!,
       APPOINTMENT_COLLECTION_ID!,
-      [Query.orderDesc("$createdAt")]
+      [Query.orderDesc("$createdAt")],
     );
 
     // const scheduledAppointments = (
@@ -93,7 +93,7 @@ export const getRecentAppointmentList = async () => {
         }
         return acc;
       },
-      initialCounts
+      initialCounts,
     );
 
     const data = {
@@ -106,7 +106,7 @@ export const getRecentAppointmentList = async () => {
   } catch (error) {
     console.error(
       "An error occurred while retrieving the recent appointments:",
-      error
+      error,
     );
   }
 };
@@ -119,7 +119,7 @@ export const sendSMSNotification = async (userId: string, content: string) => {
       ID.unique(),
       content,
       [],
-      [userId]
+      [userId],
     );
     return parseStringify(message);
   } catch (error) {
@@ -141,7 +141,7 @@ export const updateAppointment = async ({
       DATABASE_ID!,
       APPOINTMENT_COLLECTION_ID!,
       appointmentId,
-      appointment
+      appointment,
     );
 
     if (!updatedAppointment) throw Error;
@@ -162,14 +162,14 @@ export const getAppointment = async (appointmentId: string) => {
     const appointment = await databases.getDocument(
       DATABASE_ID!,
       APPOINTMENT_COLLECTION_ID!,
-      appointmentId
+      appointmentId,
     );
 
     return parseStringify(appointment);
   } catch (error) {
     console.error(
       "An error occurred while retrieving the existing patient:",
-      error
+      error,
     );
   }
 };
@@ -179,7 +179,7 @@ export const getAppointmentList = async (userId: string) => {
     const appointments = await databases.listDocuments(
       DATABASE_ID!,
       APPOINTMENT_COLLECTION_ID!,
-      [Query.equal("userId", [userId])]
+      [Query.equal("userId", [userId])],
     );
     if (appointments.total > 0) {
       console.log("Found document ID:", appointments.documents[0].$id);
@@ -190,7 +190,7 @@ export const getAppointmentList = async (userId: string) => {
   } catch (error) {
     console.error(
       "An error occurred while retrieving the existing patient:",
-      error
+      error,
     );
   }
 };
@@ -208,7 +208,7 @@ export const updateUserAppointment = async ({
       DATABASE_ID!,
       APPOINTMENT_COLLECTION_ID!,
       documentId! as string,
-      appointment
+      appointment,
     );
 
     if (!updatedAppointment) throw Error;
