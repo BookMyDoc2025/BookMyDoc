@@ -12,7 +12,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
       {isAdmin && <PasskeyModal />}
 
       <section className="remove-scrollbar container my-auto">
-        <div className="sub-container max-w-[496px]">
+        <div className="sub-container pt-0 max-w-[496px]">
           <div className=" flex flex-row items-center gap-3 py-1 my-1 text-2xl font-medium ">
             <Image
               src="/assets/icons/BookMyDoc_Icon.png"
@@ -31,7 +31,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
 
           <PatientForm />
 
-          <div className="text-14-regular mt-20 flex justify-between">
+          <div className="text-14-regular mt-12 flex justify-between">
             <p className="justify-items-end text-dark-600 xl:text-left">
               © 2025 BookMyDoc
             </p>
@@ -43,9 +43,9 @@ const Home = ({ searchParams }: SearchParamProps) => {
       </section>
 
       <Image
-        src="/assets/images/onboarding-img.png"
-        height={1000}
-        width={1000}
+        src="/assets/images/onboarding-img-6.jpg"
+        height={700}
+        width={700}
         alt="patient"
         className="side-img max-w-[50%]"
       />
