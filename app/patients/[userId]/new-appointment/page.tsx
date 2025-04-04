@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import { AppointmentForm } from "@/components/forms/AppointmentForm";
 import { getPatient } from "@/lib/actions/patient.actions";
 

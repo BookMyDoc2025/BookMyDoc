@@ -1,5 +1,7 @@
-import { Calendar, Clock, Edit2 } from "lucide-react";
 import React, { useState } from "react";
+
+import { Calendar, Clock, Edit2 } from "lucide-react";
+
 import { Appointment } from "@/types/appwrite.types";
 
 interface AppointmentCardProps {
@@ -72,7 +74,7 @@ export function AppointmentCard({ appointment, onSave }: AppointmentCardProps) {
                 setEditedAppointment({
                   ...editedAppointment,
                   $updatedAt: new Date(
-                    `${editedAppointment.schedule.toISOString().split("T")[0]}T${e.target.value}`,
+                    `${editedAppointment.schedule.toISOString().split("T")[0]}T${e.target.value}`
                   ).toISOString(),
                 })
               }
